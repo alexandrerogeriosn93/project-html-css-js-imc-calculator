@@ -64,4 +64,14 @@ function createTable(data) {
   });
 }
 
+function cleanInputs() {
+  heightInput.value = "";
+  weightInput.value = "";
+}
+
 createTable(data);
+
+clearBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  cleanInputs();
+});
