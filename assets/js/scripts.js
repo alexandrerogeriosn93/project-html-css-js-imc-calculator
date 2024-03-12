@@ -69,7 +69,18 @@ function cleanInputs() {
   weightInput.value = "";
 }
 
+function validDigits(text) {
+  return text.replace(/[^0-9,]/g, "");
+}
+
 createTable(data);
+
+[heightInput, weightInput].forEach((el) => {
+  el.addEventListener("input", (e) => {
+    const updatedValue = validDigits(e.target.value);
+    e.target.value = updatedValue;
+  });
+});
 
 clearBtn.addEventListener("click", (e) => {
   e.preventDefault();
